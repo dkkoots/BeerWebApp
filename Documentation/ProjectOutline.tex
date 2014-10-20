@@ -1,0 +1,63 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\begin{document}
+\title{Beer Web App Outline}
+\tableofcontents
+\maketitle
+\section{Overall Goals}
+\subsection{Learning and Having fun}
+The primary goal is to build something useful and have some fun doing so. I would like to first start building, in a general manner, something that has a database, user interface, and controller/sensor interface. I ultimately want it for beer brewing purposes, but if we design and implement things correctly, we should be able to 'fork' the project to meet other ends. Examples could be: personal grocery inventory (I think it would be cool to scan a receipt and have it log to a database to keep track of what's on hand), home automation, basically any problem along these lines. The project definitely doesn't need rigidly follow the plan and will hopefully undergo revisions as we transition from fledgling developers to digital wizards.
+
+\subsection{Web Stack}
+There are two ways to go with the web stack. Either use pre made libraries and styles or develop our own stuff. The challenge in developing our own stuff is handling different devices like Android, IPhone, and a standard desktop web browser. All web browsers are fairly compatible these days.
+
+\subsection{Server Side}
+We will likely be using Google App engine with the Python SDK. The free sub domain name that Google provides is \url{http://nodakbeerweb.appspot.com}. It provides a lot of functionality and, more importantly, has good documentation. It also provides an \href{https://console.developers.google.com/project/nodakbeerweb}{easy interface for managing things}.
+
+\subsection{Data Base}
+Google provides a free database with some proprietary format... They also provide a MySQL server for a very small monthly fee. I'm leaning towards SQL at this point based on familiarity.
+
+\subsection{Embedded Electronics}
+I would like to have a general, networked  micro controller interface for controls/sensors. Haven't put a lot of thought into this part yet. The only thing that I know I want is a way to remotely update the micro controller without having to connect it to the computer. I don't think it would be good to start on this aspect of the project right away since there is more than enough to do without it and its much more difficult to collaborate on.
+
+\section{Road Map}
+
+\subsection{Getting started}
+First things first. We need to get the necessary development tools and accounts.
+
+\begin{itemize}
+ \item Google App Engine Python SDK
+ \item Git client
+ \item IDE or decent text editor (Eclipse, SublimeText, Notepad++)
+\end{itemize}
+
+\subsection{Hello World}
+The next step is to get the basics working. Check out \href{https://github.com/TacoMike/BeerWebApp}{the project} on GitHub and get it running on your local machine. If desired, make some changes, commit them to Github and upload the new app to Google.
+
+\subsection{Coding Standards}
+This is part of software engineering. We need to be able to read each other's code easily and without grimacing. That means coming up with a simple set of rules to follow. We should at a minimum use the \href{http://docs.python-guide.org/en/latest/writing/style/}{language standards}. It may seem like needless overhead, but it makes the work flow a lot smoother and prevents silly arguments. "Why did he name that variable something so stupid?" "WTF!! is going on here?!" 
+
+\subsection{1st attempt at a design}
+Let's actually do something! I think we should put together a simple database, an interface to it, and a site design. As stated earlier, the design should work on multiple platforms. So in more concrete terms the task list is as follows:
+\begin{itemize}
+  \item Create SQL database(1 table) with test format and data
+  \item Create Webform for entering in data
+  \item Create Page to display data in the table
+  \item Style page based on user device
+\end{itemize}
+
+Once we have these things done, we will be in a better position to determine the next steps. Agile Development!
+
+\textit{Definitely not an initial task, but I would eventually like to be able to upload a PDF file of a receipt and have the app parse that into the database. Sounds harder than it would be.}
+
+
+That's All for Now. Let me know what you think. Nothing is sacred on this project. Feel free to edit anything! FYI, this document was made with \LaTeX\ if you want to edit it.
+
+\end{document}
